@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 
 function CardForm () {
     let [newItem, setNewItem] = useState ({
-        personal: '',
         contact_name: '',
         contact_business: '',
         contact_number: '',
@@ -16,7 +15,7 @@ function CardForm () {
         contact_state: '',
         contact_url: '',
         contact_notes: '',
-        contact_images: ''
+        contact_image: ''
     })
 
     const dispatch = useDispatch();
@@ -26,34 +25,31 @@ function CardForm () {
         let inputField = event.target.id;
         switch (inputField) {
             case '1':
-                setNewItem({...newItem, personal: event.target.value})
-                break;
-            case '2':
                 setNewItem({...newItem, contact_name: event.target.value})
                 break;
-            case '3':
+            case '2':
                 setNewItem({ ...newItem, contact_business: event.target.value })
                 break;
-            case '4':
+            case '3':
                 setNewItem({ ...newItem, contact_number: event.target.value })
                 break; 
-            case '5':
+            case '4':
                 setNewItem({ ...newItem, contact_address: event.target.value })
                 break;
-            case '6':
+            case '5':
                 setNewItem({ ...newItem, contact_city: event.target.value })
                 break; 
-            case '7':
+            case '6':
                 setNewItem({ ...newItem, contact_state: event.target.value })
                 break;
-            case '8':
+            case '7':
                 setNewItem({ ...newItem, contact_url: event.target.value })
                 break; 
-            case '9':
+            case '8':
                 setNewItem({ ...newItem, contact_notes: event.target.value })
                 break;
-            case '10':
-                setNewItem({ ...newItem, contact_images: event.target.value })
+            case '9':
+                setNewItem({ ...newItem, contact_image: event.target.value })
                 break;
         }
     
@@ -63,10 +59,9 @@ function CardForm () {
 
     const postItem = () => {
         console.log('Value from postItem', event.target.value)
-        if(newItem.personal || newItem.contact_name) {
+        if(newItem.contact_name || newItem.contact_business) {
             dispatch ({ type: 'ADD_ITEM', payload: newItem})
             setNewItem({
-                personal: '',
                 contact_name: '',
                 contact_business: '',
                 contact_number: '',
@@ -75,12 +70,11 @@ function CardForm () {
                 contact_state: '',
                 contact_url: '',
                 contact_notes: '',
-                contact_images: ''
+                contact_image: ''
             })
         }
         else { 
             setNewItem({
-                personal: '',
                 contact_name: '',
                 contact_business: '',
                 contact_number: '',
@@ -89,9 +83,9 @@ function CardForm () {
                 contact_state: '',
                 contact_url: '',
                 contact_notes: '',
-                contact_images: ''
+                contact_image: ''
             })
-            alert('You need to fill out the Name input or Business input.')
+            alert('You need to enter a Name or Business input')
         }
     }
 
@@ -109,13 +103,6 @@ function CardForm () {
       >
         <TextField
           id="1"
-          label="Personal"
-          variant="filled"
-          value={newItem.personal}
-          onChange={handleItem}
-        />
-        <TextField
-          id="2"
           label="Name"
           variant="filled"
           value={newItem.contact_name}
@@ -123,59 +110,59 @@ function CardForm () {
         />
 
         <TextField
-          id="3"
+          id="2"
           label="Business"
           variant="filled"
           value={newItem.contact_business}
           onChange={handleItem}
         />
         <TextField
-          id="4"
+          id="3"
           label="Number"
           variant="filled"
           value={newItem.contact_number}
           onChange={handleItem}
         />
         <TextField
-          id="5"
+          id="4"
           label="Street Address"
           variant="filled"
           value={newItem.contact_address}
           onChange={handleItem}
         />
         <TextField
-          id="6"
+          id="5"
           label="City"
           variant="filled"
           value={newItem.contact_city}
           onChange={handleItem}
         />
         <TextField
-          id="7"
+          id="6"
           label="State"
           variant="filled"
           value={newItem.contact_state}
           onChange={handleItem}
         />
         <TextField
-          id="8"
+          id="7"
           label="Website"
           variant="filled"
           value={newItem.contact_url}
           onChange={handleItem}
         />
         <TextField
-          id="9"
+          id="8"
           label="Notes"
           variant="filled"
           value={newItem.contact_notes}
           onChange={handleItem}
         />
         <TextField
-          id="10"
+          id="9"
           label="Image URL"
           variant="filled"
-          value={newItem.contact_url}
+          value={newItem.contact_image}
           onChange={handleItem}
         />
 

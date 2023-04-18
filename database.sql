@@ -33,7 +33,6 @@ VALUES
 --create table card_info
 CREATE TABLE "card_info" (
 	"id" serial primary key,
-	"personal" boolean default true,
 	"contact_name" varchar(50),
 	"contact_business" varchar(50),
 	"contact_number" bigint,
@@ -46,9 +45,9 @@ CREATE TABLE "card_info" (
 	);
 	
 INSERT INTO "card_info"
-	("personal", "contact_name", "contact_business", "contact_number", "contact_address", "contact_city", "contact_state", "contact_url", "contact_notes", "contact_image")
+	("contact_name", "contact_business", "contact_number", "contact_address", "contact_city", "contact_state", "contact_url", "contact_notes", "contact_image")
 VALUES
-	(true, 'Jimmy Johnson', '', 6120000000, '301 South 4th ave.', 'Minneapolis', 'MN', '', 'Really tall guy with beard', ''),
-	('false', '', 'Geico', 6124444444, '', '', '', 'http://geico.com', 'act: 212345677 Due: Dec 29 2023', ''),
-	(true, 'Tim Tebow', '', 6510000000, '', '', '', '', 'Need to get some advice from him ASAP', ''),
-	('false', '', 'CubFoods', 61211111111, '', '', '', '', 'Dont forget clearance items at end of year!', '');
+	('Jimmy Johnson', '', 6120000000, '301 South 4th ave.', 'Minneapolis', 'MN', '', 'Really tall guy with beard', ''),
+	('', 'Geico', 6124444444, '', '', '', 'http://geico.com', 'act: 212345677 Due: Dec 29 2023', ''),
+	('Tim Tebow', '', 6510000000, '', '', '', '', 'Need to get some advice from him ASAP', ''),
+	('', 'CubFoods', 61211111111, '', '', '', '', 'Dont forget clearance items at end of year!', '');
