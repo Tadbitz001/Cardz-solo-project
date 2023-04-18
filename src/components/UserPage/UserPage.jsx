@@ -2,6 +2,7 @@ import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
+import CardForm from '../CardForm/CardForm';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -23,7 +24,7 @@ function UserPage() {
 
       <div id="listContainer">
         {card.map(item => (
-          <div class="cards" key={item.id}>
+          <div className="cards" key={item.id}>
             <p>NAME:{item.contact_name}</p>
             <p>BUSINESS:{item.contact_business}</p>
             <p>NOTES: {item.contact_notes}</p>
