@@ -20,10 +20,4 @@ function* fetchCardItems () {
 
 
 
-
-
-
-
-
-
 export default cardSaga;

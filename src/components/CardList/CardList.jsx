@@ -12,9 +12,6 @@ function CardList () {
     }, [])
 
 
-
-
-
     return (
         <>
         <h2>This is the CARD LIST</h2>
@@ -24,6 +21,8 @@ function CardList () {
             <div className="cards" key={item.id}>
               <p>NAME:{item.contact_name}</p>
               <p>BUSINESS:{item.contact_business}</p>
+              <p>NUMBER: {item.contact_number}</p>
+              <p>WEBSITE/EMAIL: {item.contact_url}</p>
               <p>NOTES: {item.contact_notes}</p>
             </div>
           ))}

@@ -1,7 +1,9 @@
 import { all } from 'redux-saga/effects';
 import cardSaga from './card.saga';
 import loginSaga from './login.saga';
+import postFormSaga from './postform.saga';
 import postSaga from './postItem.saga';
+import profileSaga from './profile.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 
@@ -18,6 +20,8 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     cardSaga(),
-    postSaga()
+    postSaga(),
+    postFormSaga(),
+    profileSaga()
   ]);
 }

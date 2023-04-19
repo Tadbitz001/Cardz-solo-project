@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import CardForm from '../CardForm/CardForm';
 import CardList from '../CardList/CardList';
+import ProfileForm from '../ProfileForm/ProfileForm';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -18,7 +19,7 @@ function UserPage() {
 
 
 
-      
+      <ProfileForm />
       <CardForm />
       <CardList />
       

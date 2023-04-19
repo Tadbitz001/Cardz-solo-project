@@ -11,24 +11,22 @@ CREATE TABLE "user" (
 --Drop tables
 DROP TABLE "user";
 DROP TABLE "card_info";
+DROP TABLE "profile";
 
---create table user
-CREATE TABLE "user" (
+--create table profile
+CREATE TABLE "profile" (
 	"id" serial primary key,
-	"user_name" varchar(20) not null,
-	"user_password" varchar(20) not null,
-	"first_name" varchar(20) not null,
-	"last_name" varchar(20) not null,
-	"user_email" varchar(100) not null,
-	"user_number" bigint
+	"first_name" varchar(50) not null,
+	"last_name" varchar(50) not null,
+	"user_email" varchar(200) not null,
+	"user_number" bigint,
+	"user_id" varchar(100) not null
 	);
-
-INSERT INTO "user"
-	("user_name", "user_password", "first_name", "last_name", "user_email", "user_number")
+INSERT INTO "profile"
+	("first_name", "last_name", "user_email", "user_number", "user_id")
 VALUES
-	('john', '1234', 'John', 'Smith', 'jsmith@yahoo.com', 6122222222),
-	('aqua', '1234', 'Aqua', 'Marine', 'aquamarine@yahoo.com', 6123333333);
-
+	('John', 'Smith', 'jsmith@yahoo.com', 6122222222, 1),
+	('Aqua', 'Marine', 'aquamarine@yahoo.com', 6123333333, 1);
 
 --create table card_info
 CREATE TABLE "card_info" (
