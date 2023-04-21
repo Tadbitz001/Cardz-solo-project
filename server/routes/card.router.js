@@ -21,6 +21,22 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   
 });
 
+router.get('/:id', rejectUnauthenticated, (req, res) => {
+  // GET id_route code here
+  pool
+  .query(`SELECT * FROM card_info WHERE card_info.id = $1`, [req.params.id])
+  .then((result) => {
+    res.send(result.rows)
+    //console.log('card_info id_router', results.rows)
+  })
+  .catch ((error) => {
+    console.log('Error in Getid route', error)
+    res.sendStatus(500)
+  })
+  
+});
+
+
 //Put Route 
 router.put('/:id', (req,res)=> {
   // endpoint functionality

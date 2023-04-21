@@ -10,7 +10,7 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+        <h2 className="nav-title">CARDZ</h2>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
@@ -36,8 +36,8 @@ function Nav() {
               CardForm
             </Link>
 
-            <Link className="navLink" to="/carddetails">
-              CardDetails 
+            <Link className="navLink" to="/indcarddetails">
+              Indv.Details 
             </Link>
 
             <Link className="navLink" to="/info">
