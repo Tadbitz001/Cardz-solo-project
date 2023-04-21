@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
         res.sendStatus(201);
       })
       .catch((error) => {
-        console.log('Error completing POST card query', error)
+        console.log('Error completing profile POST query', error)
         res.sendStatus(500);
       });
 });

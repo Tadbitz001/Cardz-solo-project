@@ -21,8 +21,24 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   
 });
 
-//Delete route
+//Put Route 
+router.put('/:id', (req,res)=> {
+  // endpoint functionality
+  const updatedItem = req.body;  //this is the action.payload (actual data)
+  const idOfItemToEdit = req.params.id //this is the id so the DB knows what to update
+  const queryText = `UPDATE card_info SET contact_notes = $1 WHERE id = $2`
+  console.log('this is req.body and req.params', req.body, 'BREAK',req.params)
 
+  pool.query(queryText, [updatedItem.contact_notes, idOfItemToEdit])
+  .then((results) => res.sendStatus(200))
+  .catch(error => {
+    console.log('Error in Put route', error);
+    res.sendStatus(500)
+  })
+});
+
+
+//Delete route
 router.delete ('/:id', (req, res) => {
   const idItemToDelete = req.params.id;
   console.log('this is idItemToDelete', req.params.id)

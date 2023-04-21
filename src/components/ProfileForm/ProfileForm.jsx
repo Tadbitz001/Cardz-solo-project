@@ -51,6 +51,7 @@ function ProfileForm () {
                 user_email: '',
                 user_number: ''
             })
+            history.push('/')  //sends user back to main page when completed form.
         }
         else { 
             setNewItem({

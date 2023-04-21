@@ -4,6 +4,8 @@ import Box from "@mui/system/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import { useHistory } from "react-router-dom";
+
 
 function CardForm () {
     let [newItem, setNewItem] = useState ({
@@ -19,6 +21,7 @@ function CardForm () {
     })
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleItem = (event) => {
         console.log('Value from input', event.target.value)
@@ -72,6 +75,7 @@ function CardForm () {
                 contact_notes: '',
                 contact_image: ''
             })
+            history.push('/');
         }
         else { 
             setNewItem({

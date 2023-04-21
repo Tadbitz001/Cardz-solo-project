@@ -19,8 +19,8 @@ function UserPage() {
 
 
 
-      <ProfileForm />
-      <CardForm />
+      {/* <ProfileForm /> */}
+      {/* <CardForm /> */}
       <CardList />
       
       <LogOutButton className="btn" />
