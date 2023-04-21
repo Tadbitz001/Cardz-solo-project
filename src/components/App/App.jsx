@@ -82,6 +82,14 @@ function App() {
           <ProtectedRoute 
             // logged in shows InfoPage else shows LoginPage⭐️
             exact
+            path="/carddetails"
+          >
+            <CardDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+            // logged in shows InfoPage else shows LoginPage⭐️
+            exact
             path="/profile"
           >
             <ProfilePage />

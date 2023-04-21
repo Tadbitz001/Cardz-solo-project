@@ -36,6 +36,10 @@ function Nav() {
               CardForm
             </Link>
 
+            <Link className="navLink" to="/carddetails">
+              CardDetails 
+            </Link>
+
             <Link className="navLink" to="/info">
               Info Page
             </Link>

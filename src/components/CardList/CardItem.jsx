@@ -41,14 +41,14 @@ function CardItem ({item}) {
 
     return (
         <div className="cards" key={item.id}>
-        <p>NAME:{item.contact_name}</p>
-        <p>BUSINESS:{item.contact_business}</p>
-        <p>NUMBER: {item.contact_number}</p>
-        <p>WEBSITE/EMAIL: {item.contact_url}</p>
-        <p>NOTES: {item.contact_notes}</p>
+        {/* // <p>NAME:{item.contact_name}</p>
+        // <p>BUSINESS:{item.contact_business}</p>
+        // <p>NUMBER: {item.contact_number}</p>
+        // <p>WEBSITE/EMAIL: {item.contact_url}</p>
+        // <p>NOTES: {item.contact_notes}</p> */}
         <button onClick={() => updatedItem(item.id)}>Edit</button>
 
-      </div>
+        </div>
 
     )
 }
