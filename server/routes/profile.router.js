@@ -10,7 +10,7 @@ const {rejectUnauthenticated} = require('../modules/authentication-middleware')
 router.get('/', rejectUnauthenticated, (req, res) => {
     // GET route code here
     pool
-    .query(`SELECT * FROM profile ORDER by id`)
+    .query(`SELECT * FROM profile WHERE user_id =$1`)
     .then((result) => {
       res.send(result.rows)
       //console.log('profile.router', results.rows)
