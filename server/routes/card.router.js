@@ -58,10 +58,10 @@ router.put('/:id', (req,res)=> {
 router.delete ('/:id', (req, res) => {
   const idItemToDelete = req.params.id;
   console.log('this is idItemToDelete', req.params.id)
-  const queryText = `Delete FROM card_info WHERE user_id = $1 AND card_info.user_id = $2`
+  const queryText = `Delete FROM card_info WHERE id = $1`;
   const userId = req.user.id;
 
-  pool.query(queryText, [userId, idItemToDelete])
+  pool.query(queryText, [idItemToDelete])
     .then(() => res.sendStatus(200))
     .catch(error => {
       console.log('Error in Delete route', error);

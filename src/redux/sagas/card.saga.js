@@ -3,9 +3,9 @@ import {put, takeLatest} from 'redux-saga/effects'
 
 function* cardSaga () {
     yield takeLatest ('FETCH_CARD', fetchCardItems)
-    // yield takeLatest ('EDIT_CARD', editCard)
+    yield takeLatest ('EDIT_CARD', editCard)
     yield takeLatest ('EDIT_CARD_ID', editCardId)
-
+    yield takeLatest ('DELETE_CARD', deleteCard)
 }
 
 function* editCardId(action) {
@@ -20,15 +20,26 @@ function* editCardId(action) {
 
 }
 
-// function* editCard (action) {
-//     try {
-//         console.log('Inside of EditCard')
-//         yield axios.put(`/api/card/${action.payload.id}`, action.payload)
-//         yield put ({type: 'FETCH_CARD'}) // does not need a payload since it is a GET request to update DOM
-//     } catch (error) {
-//         console.log('Error in EditCard route', error)
-//     }
-// }
+function* deleteCard (action) {
+    console.log('inside of deleteCard', action.payload);
+    try {
+        yield axios.delete(`/api/card/${action.payload}`)
+        console.log('this is delete/ action.payload.id', action.payload);
+        yield put ({type: 'FETCH_CARD'})
+    } catch (error) {
+        console.log('Error in deleteSaga', error)
+    }
+}
+
+function* editCard (action) {
+    try {
+        console.log('Inside of EditCard')
+        yield axios.put(`/api/card/${action.payload.id}`, action.payload)
+        yield put ({type: 'FETCH_CARD'}) // does not need a payload since it is a GET request to update DOM
+    } catch (error) {
+        console.log('Error in EditCard route', error)
+    }
+}
 
 function* fetchCardItems () {
     try {

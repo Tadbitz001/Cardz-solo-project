@@ -1,7 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { HashRouter as Router, Route, Link, useHistory } from "react-router-dom";
-import CardItem from "./CardItem";
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
 
 function CardList () {
 
@@ -24,35 +32,53 @@ function CardList () {
     }
 
     return (
+
+
         <>
         <h2>This is the CARD LIST</h2>
-
-        {/* <div id="listContainer">
-            {card.map((item, i) => {
-                return <CardItem key={i} item={item} />;
-            })} */}
-
+        
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {card.map(item => (
-            // <Router>
-            // <Link to='/details/:id'>
-            <div className="cards" key={item.id}>
-              <p>NAME:{item.contact_name}</p>
-              <p>BUSINESS:{item.contact_business}</p>
-              {/* <p>NUMBER: {item.contact_number}</p>
-              <p>WEBSITE/EMAIL: {item.contact_url}</p> */}
-              <p>NOTES: {item.contact_notes}</p>
-              <button onClick={(event)=> handleClick(event, item)}>Details</button>
 
-            </div>
-            // </Link>
-            // </Router>
+              <Card sx={{ minWidth: 275 }}>
+                  <CardContent>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                      NAME:{item.contact_name}
+                      </Typography>
+                      <Typography variant="h5" component="div">
+            
+                      </Typography>
+                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                      BUSINESS:{item.contact_business}
+                      </Typography>
+                      <Typography variant="body2">
+                      NOTES: {item.contact_notes}
+                          <br />
+                          {'"a benevolent smile"'}
+                      </Typography>
+                  </CardContent>
+                  <CardActions>
+                      <Button size="small" onClick={(event)=> handleClick(event, item)}>Details</Button>
+                  </CardActions>
+              </Card>
+            
+
+            // <div className="cards" key={item.id}>
+            //   <p>NAME:{item.contact_name}</p>
+            //   <p>BUSINESS:{item.contact_business}</p>
+            //   {/* <p>NUMBER: {item.contact_number}</p>
+            //   <p>WEBSITE/EMAIL: {item.contact_url}</p> */}
+            //   <p>NOTES: {item.contact_notes}</p>
+            //   <button onClick={(event)=> handleClick(event, item)}>Details</button>
+
+            // </div>
+
           ))}
-        {/* </div> */}
-
-
+        </div>
         </>
     )
 
 }
 
 export default CardList;
+
