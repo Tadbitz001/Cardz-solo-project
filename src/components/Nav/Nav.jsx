@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import HomeIcon from '@mui/icons-material/Home';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -25,11 +27,11 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/user">
-              Home
+            <HomeIcon style={{fontSize: 28}}/>
             </Link>
 
             <Link className="navLink" to="/profile">
-              Profile
+            <AccountBoxIcon/>
             </Link>
 
             <Link className="navLink" to="/cardform">
@@ -48,9 +50,9 @@ function Nav() {
           </>
         )}
 
-        <Link className="navLink" to="/about">
+        {/* <Link className="navLink" to="/about"> //dont need this right now
           About
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

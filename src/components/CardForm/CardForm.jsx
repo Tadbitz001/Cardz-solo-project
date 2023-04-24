@@ -125,6 +125,12 @@ function CardForm () {
           variant="filled"
           value={newItem.contact_number}
           onChange={handleItem}
+          type="text"
+          InputProps={{
+            pattern: '[0-9]+',
+            inputProps: { maxLength: 10 },
+          }}
+
         />
         <TextField
           id="4"
@@ -149,7 +155,7 @@ function CardForm () {
         />
         <TextField
           id="7"
-          label="Website"
+          label="Email/Website"
           variant="filled"
           value={newItem.contact_url}
           onChange={handleItem}

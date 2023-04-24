@@ -47,6 +47,9 @@ function CardDetails () {
         dispatch({ type: "FETCH_CARD" });
       }, [user]);
 
+    //create a const to get date format to show only date and not time.
+    const formattedDate = new Date(user[0].indttm).toLocaleDateString();
+
     return (
         <div className="formContainer">
           <h3>Card Details</h3>
@@ -60,8 +63,14 @@ function CardDetails () {
               <p>BUSINESS: {user[0].contact_business}</p>
               <p>NUMBER: {user[0].contact_number}</p>
               <p>WEBSITE/EMAIL: {user[0].contact_url}</p>
+              <p>Address: {user[0].contact_address}</p>
+              <p>City: {user[0].contact_city}</p>
+              <p>State: {user[0].contact_state}</p>
+              <br></br>
               <p>NOTES: {user[0].contact_notes}</p>
-      
+              <p>{formattedDate}</p>
+
+    
               {idToEdit === user[0].id ? (
                 <div>                        
               <input

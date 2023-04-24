@@ -32,8 +32,6 @@ function CardList () {
     }
 
     return (
-
-
         <>
         <h2>This is the CARD LIST</h2>
         
@@ -43,18 +41,19 @@ function CardList () {
               <Card sx={{ minWidth: 275 }}>
                   <CardContent>
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      NAME:{item.contact_name}
+                      NAME: {item.contact_name}
                       </Typography>
                       <Typography variant="h5" component="div">
-            
                       </Typography>
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      BUSINESS:{item.contact_business}
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                      BUSINESS: {item.contact_business}
+                      </Typography>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                      WEBSITE/EMAIL: {item.contact_url}
                       </Typography>
                       <Typography variant="body2">
                       NOTES: {item.contact_notes}
-                          <br />
-                          {'"a benevolent smile"'}
+
                       </Typography>
                   </CardContent>
                   <CardActions>
