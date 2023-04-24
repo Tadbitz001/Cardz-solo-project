@@ -48,14 +48,12 @@ function CardDetails () {
       }, [user]);
 
     //create a const to get date format to show only date and not time.
-    const formattedDate = new Date(user[0].indttm).toLocaleDateString();
+    // const formattedDate = new Date(user[0].indttm).toLocaleDateString();
 
     return (
         <div className="formContainer">
           <h3>Card Details</h3>
       
-
-
 
           {user.length > 0 && (
             <div>
@@ -68,7 +66,7 @@ function CardDetails () {
               <p>State: {user[0].contact_state}</p>
               <br></br>
               <p>NOTES: {user[0].contact_notes}</p>
-              <p>{formattedDate}</p>
+              {/* <p>{formattedDate}</p> */}
 
     
               {idToEdit === user[0].id ? (

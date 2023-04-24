@@ -24,6 +24,7 @@ import './App.css';
 import CardDetails from '../CardDetails/CardDetails';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import CardFormPage from '../CardFormPage/CardFormPage';
+import UserProfile from '../UserProfile/UserProfile';
 
 function App() {
   const dispatch = useDispatch();
@@ -72,7 +73,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute 
-            // logged in shows InfoPage else shows LoginPage⭐️
+            // logged in shows InfoPage else shows LoginPage
             exact
             path="/cardform"
           >
@@ -80,7 +81,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute 
-            // logged in shows InfoPage else shows LoginPage⭐️
+            // logged in shows InfoPage else shows LoginPage
             exact
             path="/indcarddetails"
           >
@@ -88,11 +89,19 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute 
-            // logged in shows InfoPage else shows LoginPage⭐️
+            // logged in shows InfoPage else shows LoginPage
             exact
             path="/profile"
           >
             <ProfilePage />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+          // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/displayprofile"
+          >
+           <UserProfile />
           </ProtectedRoute>
 
           <Route

@@ -10,9 +10,9 @@ function* fetchForm () {
     try {
         console.log('inside of fetchForm')
         const response = yield axios.get('/api/form');
-        yield put ({ type: 'SET_FORM', payload: response.data})
+        yield put ({ type: 'SET_PROFILE', payload: response.data})
     } catch (error) {
-        console.log('Error in fetchCard GET', error)
+        console.log('Error in fetchForm GET', error)
     } 
 }
 
