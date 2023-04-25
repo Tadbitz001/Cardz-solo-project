@@ -21,11 +21,11 @@ function CardList () {
       dispatch({ type: 'FETCH_CARD'})
     }, [])
 
-    function handleClick (event, id) { //2️⃣
+    function handleClick (event, id) { //2️
         console.log('id', id)
         dispatch ({
-            type:'EDIT_CARD_ID', //3️⃣
-            payload: id //3️⃣
+            type:'EDIT_CARD_ID', //3️
+            payload: id //3️
         })
 
         history.push('/indcarddetails')
@@ -35,10 +35,10 @@ function CardList () {
         <>
         <h2>This is the CARD LIST</h2>
         
-        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div style={{display: 'flex', flexWrap: 'wrap' }}>
           {card.map(item => (
 
-              <Card sx={{ minWidth: 275 }}>
+              <Card className="card" sx={{ minWidth: 275 }}>
                   <CardContent>
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                       NAME: {item.contact_name}

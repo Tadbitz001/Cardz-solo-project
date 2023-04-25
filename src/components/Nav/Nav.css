@@ -40,3 +40,14 @@
 .navLink:hover {
   background-color: #008183;
 }
+
+.card {
+  width: 400px; 
+  height: 200px; 
+  margin: 10px;
+}
+
+.profileCard {
+
+  
+}

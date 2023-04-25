@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+// import LogOutButton from "../LogOutButton/LogOutButton";
 
 
 import Box from '@mui/material/Box';
@@ -26,6 +27,12 @@ function UserProfile () {
     const handleHomeClick = () => {
         history.push('/');
     }
+
+    // const handleLogOut = () => {
+    //     console.log('inside of logout');
+    //     <LogOutButton/>;
+    // }
+
     return (
 
         <div>
@@ -34,7 +41,7 @@ function UserProfile () {
             User Profile ID: {userProfile.user_id}
             </Typography>
 
-        <Card sx={{ minWidth: 275 }}>
+        <Card className="profileCard" sx={{ minWidth: 275 }}>
         <CardContent>
             <Typography variant="h5" >
             First Name: {userProfile.first_name}
@@ -52,6 +59,7 @@ function UserProfile () {
         </CardContent>
         <CardActions>
             <Button size="large" onClick={handleHomeClick}>Home</Button>
+            {/* <Button size="large" onClick={handleLogOut}> Sign out</Button> */}
         </CardActions>
         </Card>
         </div>

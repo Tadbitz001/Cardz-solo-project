@@ -68,11 +68,14 @@ function ProfileForm () {
 
     return (
         <>
-              <Box
+      <Box
         component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
-        }}
+       sx={{
+         display: 'flex',
+         flexDirection: 'column',
+         alignItems: 'center',
+         gap: '10px'
+       }}
         noValidate
         autoComplete="off"
         onSubmit={postItem}

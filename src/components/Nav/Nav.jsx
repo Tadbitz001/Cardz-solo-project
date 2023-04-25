@@ -31,25 +31,25 @@ function Nav() {
             <HomeIcon style={{fontSize: 28}}/>
             </Link>
 
-            <Link className="navLink" to="/profile">
-            <AccountBoxIcon/>
+            <Link className="navLink" to="/displayprofile">
+              <AccountBoxIcon/>
             </Link>
 
-            <Link className="navLink" to="/displayprofile">
+            <Link className="navLink" to="/profile">
               UserProfile
             </Link>
 
-            <Link className="navLink" to="/cardform">
+            {/* <Link className="navLink" to="/cardform">
               CardForm
-            </Link>
+            </Link> */}
 
-            <Link className="navLink" to="/indcarddetails">
+            {/* <Link className="navLink" to="/indcarddetails">
               Indv.Details 
-            </Link>
+            </Link> */}
 
-            <Link className="navLink" to="/info">
+            {/* <Link className="navLink" to="/info">
               Info Page
-            </Link>
+            </Link> */}  
 
             <LogOutButton className="navLink" />
           </>
