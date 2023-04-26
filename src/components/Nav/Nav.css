@@ -42,12 +42,55 @@
 }
 
 .card {
+  position: relative;
   width: 400px; 
   height: 200px; 
   margin: 10px;
 }
 
+.cardActions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+
+/* .profileCard {
+  width: 600px;
+  height: 600px;
+  margin: 30px;
+  border: 1pt solid;
+} */
+
 .profileCard {
 
-  
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.cardDetails {
+  width: 350px;
+  border: 1pt solid;
+  /* height: auto; */
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileContainer {
+  width: 500px;
+  border: 1pt solid;
+  /* height: auto; */
+  background-color: rgb(201, 191, 168);
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+

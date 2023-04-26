@@ -28,19 +28,20 @@ function UserProfile () {
         history.push('/');
     }
 
-    // const handleLogOut = () => {
-    //     console.log('inside of logout');
-    //     <LogOutButton/>;
-    // }
+    const handleLogOut= () => {
+        dispatch({ type: 'LOGOUT' })
+    }
 
     return (
 
-        <div>
-
-            <Typography sx={{ fontSize: 36}} color="text.secondary" gutterBottom>
+        <div className="profileContainer">
+            <div className="profileImage">
+            <img src="https://api-private.atlassian.com/users/d253c7c83fb81e3eb4743ca564e43275/avatar"/>
+            <Typography sx={{ fontSize: 30}} color="text.secondary" gutterBottom>
             User Profile ID: {userProfile.user_id}
             </Typography>
-
+            </div>
+            <div className="profileText">
         <Card className="profileCard" sx={{ minWidth: 275 }}>
         <CardContent>
             <Typography variant="h5" >
@@ -55,13 +56,16 @@ function UserProfile () {
             <Typography variant="h5" gutterBottom>
             Contact Number: {userProfile.user_number}
             </Typography>
-
+            
         </CardContent>
+        <div className="profileBtn">
         <CardActions>
-            <Button size="large" onClick={handleHomeClick}>Home</Button>
-            {/* <Button size="large" onClick={handleLogOut}> Sign out</Button> */}
+            <Button size="large" variant="outlined" onClick={handleHomeClick}>Home</Button>
+            <Button size="large" variant="outlined" onClick={handleLogOut}> Sign out</Button>
         </CardActions>
+        </div>
         </Card>
+        </div>
         </div>
 
         // <div className="">

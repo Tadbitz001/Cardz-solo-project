@@ -5,7 +5,7 @@ import './Nav.css';
 import { useSelector } from 'react-redux';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import UserProfile from '../UserProfile/UserProfile';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -35,13 +35,13 @@ function Nav() {
               <AccountBoxIcon/>
             </Link>
 
+            <Link className="navLink" to="/cardform">
+              <AddBoxOutlinedIcon/>
+            </Link>
+
             <Link className="navLink" to="/profile">
               UserProfile
             </Link>
-
-            {/* <Link className="navLink" to="/cardform">
-              CardForm
-            </Link> */}
 
             {/* <Link className="navLink" to="/indcarddetails">
               Indv.Details 

@@ -30,7 +30,7 @@ function UserPage() {
       
       {/* <LogOutButton className="btn" /> */}
       {/* need to add button here to add a card. */}
-      <Button variant="outlined" onClick={addCardBtn}>Add Card</Button>
+      <Button variant="contained" onClick={addCardBtn}>Add Card</Button>
 
     </div>
   );

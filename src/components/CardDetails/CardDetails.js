@@ -1,9 +1,15 @@
 import React from "react";
-import ProfileForm from "../ProfileForm/ProfileForm";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
 
 function CardDetails () {
     const user = useSelector((store) => store.cardIdReducer);
@@ -50,48 +56,82 @@ function CardDetails () {
     // console.log('this is user[0].indttm', user[0].indttm)
     //create a const to get date format to show only date and not time.
     // const formattedDate = new Date(user[0].indttm).toLocaleDateString();
+    // {/* <p>{formattedDate}</p> */}
 
     return (
-        <div className="cardContainer">
-          <h2>Card Details</h2>
-      
-
-          {user.length > 0 && (
-            <div>
-              <p>NAME: {user[0].contact_name}</p>
-              <p>BUSINESS: {user[0].contact_business}</p>
-              <p>NUMBER: {user[0].contact_number}</p>
-              <p>WEBSITE/EMAIL: {user[0].contact_url}</p>
-              <p>Address: {user[0].contact_address}</p>
-              <p>City: {user[0].contact_city}</p>
-              <p>State: {user[0].contact_state}</p>
-              
-              <p>NOTES: {user[0].contact_notes}</p>
-              {/* <p>{formattedDate}</p> */}
-              <br></br>
-
+        <Card className="cardDetails">
+          <CardContent>
+            <Typography variant="h3" component="h2">
+              Card Details
+            </Typography>
     
-              {idToEdit === user[0].id ? (
-                <div>                        
-              <input
-                value={newNotes}
-                onChange={(event) => setNewNotes(event.target.value)}
-              />
-              <button onClick={() => updatedItem(user.id)}>
-                Save
-              </button></div>
-              ) : (
-                <button onClick={() => addInputField(user[0])}>Edit</button>
-                
-              )}
-                <button onClick={deleteDispatch}>DELETE</button>
-                {/* <button onClick={() =>  dispatch({type: 'DELETE_CARD', payload: user[0].id})}>DELETE</button> */}
-
-
-            </div>
-          )}
-        </div>
+            {user.length > 0 && (
+              <div>
+                <Typography variant="body1">
+                  NAME: {user[0].contact_name}
+                </Typography>
+                <Typography variant="body1">
+                  BUSINESS: {user[0].contact_business}
+                </Typography>
+                <Typography variant="body1">
+                  NUMBER: {user[0].contact_number}
+                </Typography>
+                <Typography variant="body1">
+                  WEBSITE/EMAIL: {user[0].contact_url}
+                </Typography>
+                <Typography variant="body1">
+                  Address: {user[0].contact_address}
+                </Typography>
+                <Typography variant="body1">
+                  City: {user[0].contact_city}
+                </Typography>
+                <Typography variant="body1">
+                  State: {user[0].contact_state}
+                </Typography>
+                <Typography variant="body1">
+                  NOTES: {user[0].contact_notes}
+                </Typography>
+                <Typography variant="body1">
+                  TIMESTAMP: {user[0].indttm}
+                </Typography>
+                <br />
+                {idToEdit === user[0].id ? (
+                  <div>
+                    <input
+                      value={newNotes}
+                      onChange={(event) => setNewNotes(event.target.value)}
+                    />
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => updatedItem(user.id)}
+                    >
+                      Save
+                    </Button>
+                  </div>
+                ) : (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => addInputField(user[0])}
+                  >
+                    Edit
+                  </Button>
+                )}
+                <Button
+                    style={{backgroundColor: '#ff0000'}}
+                    sx={{ marginLeft: 18 }}
+                  variant="contained"
+                  color="secondary"
+                  onClick={deleteDispatch}
+                >
+                  DELETE
+                </Button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       );
-}
-
-export default CardDetails;
+    };
+    
+    export default CardDetails;

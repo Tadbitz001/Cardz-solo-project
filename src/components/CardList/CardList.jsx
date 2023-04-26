@@ -33,20 +33,20 @@ function CardList () {
 
     return (
         <>
-        <h2>This is the CARD LIST</h2>
+        <h2>This is your CARD LIST</h2>
         
         <div style={{display: 'flex', flexWrap: 'wrap' }}>
           {card.map(item => (
 
-              <Card className="card" sx={{ minWidth: 275 }}>
+              <Card className="card" sx={{ minWidth: 275 }} key={item.id}>
                   <CardContent>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                      {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                       NAME: {item.contact_name}
-                      </Typography>
+                      </Typography> */}
                       <Typography variant="h5" component="div">
                       </Typography>
                       <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                      BUSINESS: {item.contact_business}
+                      CONTACT NAME: {item.contact_business}
                       </Typography>
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                       WEBSITE/EMAIL: {item.contact_url}
@@ -56,8 +56,8 @@ function CardList () {
 
                       </Typography>
                   </CardContent>
-                  <CardActions>
-                      <Button size="small" onClick={(event)=> handleClick(event, item)}>Details</Button>
+                  <CardActions className="cardActions">
+                      <Button size="small" variant="outlined" onClick={(event)=> handleClick(event, item)}>Details</Button>
                   </CardActions>
               </Card>
             
