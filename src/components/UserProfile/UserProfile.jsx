@@ -28,6 +28,10 @@ function UserProfile () {
         history.push('/');
     }
 
+    const handleProfile = () => {
+        history.push('/profile')
+    }
+
     const handleLogOut= () => {
         dispatch({ type: 'LOGOUT' })
     }
@@ -35,6 +39,9 @@ function UserProfile () {
     return (
 
         <div className="profileContainer">
+            <Box sx={{ position: 'absolute', top: 10, right: 10 }}>
+                <Button variant="contained" onClick={handleProfile}>Profile</Button>
+            </Box>
             <div className="profileImage">
             <img src="https://api-private.atlassian.com/users/d253c7c83fb81e3eb4743ca564e43275/avatar"/>
             <Typography sx={{ fontSize: 30}} color="text.secondary" gutterBottom>
@@ -60,7 +67,7 @@ function UserProfile () {
         </CardContent>
         <div className="profileBtn">
         <CardActions>
-            <Button size="large" variant="outlined" onClick={handleHomeClick}>Home</Button>
+            <Button size="large" variant="outlined" onClick={handleHomeClick}>BACK</Button>
             <Button size="large" variant="outlined" onClick={handleLogOut}> Sign out</Button>
         </CardActions>
         </div>

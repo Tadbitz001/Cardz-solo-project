@@ -38,15 +38,17 @@ function CardList () {
         <div style={{display: 'flex', flexWrap: 'wrap' }}>
           {card.map(item => (
 
-              <Card className="card" sx={{ minWidth: 275 }} key={item.id}>
+              <Card className="card" sx={{ minWidth: 275,  '&:hover': {
+                boxShadow: '0 0 5px 10px rgba(0,0,0,0.2)'} }} key={item.id}>
                   <CardContent>
-                      {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                      NAME: {item.contact_name}
-                      </Typography> */}
+
                       <Typography variant="h5" component="div">
                       </Typography>
                       <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                      CONTACT NAME: {item.contact_business}
+                      CONTACT: {item.contact_business}
+                      </Typography>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                      NUMBER: {item.contact_number}
                       </Typography>
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                       WEBSITE/EMAIL: {item.contact_url}

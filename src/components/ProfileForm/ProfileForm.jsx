@@ -19,6 +19,11 @@ function ProfileForm () {
     //Need to re-direct to main page when completed
     const dispatch = useDispatch();
 
+    const handleBackClick= () => {
+      history.push('/')
+  }
+
+
     const handleItem = (event) => {
         console.log('Value from input', event.target.value)
         let inputProfileField = event.target.id;
@@ -108,11 +113,20 @@ function ProfileForm () {
           variant="filled"
           value={newItem.user_number}
           onChange={handleItem}
+          InputProps={{
+            pattern: '[0-9]+',
+            inputProps: { maxLength: 10 },
+          }}
+          
         />
 
         <Button type="submit" variant="contained">
           Submit
         </Button>
+        <Button size="large" variant="outlined" onClick={handleBackClick}>
+          BACK
+        </Button>
+
 
       </Box>
         </>

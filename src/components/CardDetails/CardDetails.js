@@ -42,6 +42,10 @@ function CardDetails () {
         //need to make saga for edit, need to make put request in saga, make server side put request
     }
 
+    function goBack () {
+        history.push('/')
+    }
+
     function deleteDispatch () {
         console.log('this is userid', user[0].id)
         dispatch({type: 'DELETE_CARD', 
@@ -59,6 +63,7 @@ function CardDetails () {
     // {/* <p>{formattedDate}</p> */}
 
     return (
+        <>
         <Card className="cardDetails">
           <CardContent>
             <Typography variant="h3" component="h2">
@@ -92,7 +97,7 @@ function CardDetails () {
                   NOTES: {user[0].contact_notes}
                 </Typography>
                 <Typography variant="body1">
-                  TIMESTAMP: {user[0].indttm}
+                  Created: {user[0].indttm}
                 </Typography>
                 <br />
                 {idToEdit === user[0].id ? (
@@ -117,7 +122,9 @@ function CardDetails () {
                   >
                     Edit
                   </Button>
+                  
                 )}
+
                 <Button
                     style={{backgroundColor: '#ff0000'}}
                     sx={{ marginLeft: 18 }}
@@ -131,6 +138,16 @@ function CardDetails () {
             )}
           </CardContent>
         </Card>
+        <div className="cardDetailsBackBtn">
+                <Button
+                    variant="contained"
+                    style={{backgroundColor: '#D3D3D3'}}
+                    onClick={goBack}
+                  >
+                    BACK
+                </Button>
+        </div>
+        </>
       );
     };
     

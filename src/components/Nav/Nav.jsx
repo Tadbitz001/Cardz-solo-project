@@ -39,9 +39,9 @@ function Nav() {
               <AddBoxOutlinedIcon/>
             </Link>
 
-            <Link className="navLink" to="/profile">
+            {/* <Link className="navLink" to="/profile">
               UserProfile
-            </Link>
+            </Link> */}
 
             {/* <Link className="navLink" to="/indcarddetails">
               Indv.Details 

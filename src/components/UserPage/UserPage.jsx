@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
-  const user = useSelector((store) => store.user);
+  const user = useSelector((store) => store.profileReducer);
   const history = useHistory();
 
   function addCardBtn () {
@@ -19,10 +19,8 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Welcome to Cardz, {user.username}!</h2>
+      <h2>Welcome to Cardz, {user.first_name}!</h2>
       {/* <p>Your ID is: {user.id}</p> */}
-
-
 
       {/* <ProfileForm /> */}
       {/* <CardForm /> */}
