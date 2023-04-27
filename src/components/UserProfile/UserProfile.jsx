@@ -40,7 +40,7 @@ function UserProfile () {
 
         <div className="profileContainer">
             <Box sx={{ position: 'absolute', top: 10, right: 10 }}>
-                <Button variant="contained" onClick={handleProfile}>Profile</Button>
+                <Button variant="text" onClick={handleHomeClick}>Back</Button>
             </Box>
             <div className="profileImage">
             <img src="https://api-private.atlassian.com/users/d253c7c83fb81e3eb4743ca564e43275/avatar"/>
@@ -67,7 +67,7 @@ function UserProfile () {
         </CardContent>
         <div className="profileBtn">
         <CardActions>
-            <Button size="large" variant="outlined" onClick={handleHomeClick}>BACK</Button>
+            <Button size="large" variant="outlined" onClick={handleProfile}>Update Profile</Button>
             <Button size="large" variant="outlined" onClick={handleLogOut}> Sign out</Button>
         </CardActions>
         </div>

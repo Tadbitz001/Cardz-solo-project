@@ -85,7 +85,7 @@ function CardDetails () {
                 {/* <Typography variant="body1">
                   NAME: {user[0].contact_name}
                 </Typography> */}
-                <Typography variant="h4">{user[0].contact_business}</Typography>
+                <Typography variant="h5">{user[0].contact_business}</Typography>
                 <Typography variant="body1">
                   Number: {user[0].contact_number}
                 </Typography>
