@@ -4,18 +4,18 @@ import {put, takeLatest} from 'redux-saga/effects'
 function* cardSaga () {
     yield takeLatest ('FETCH_CARD', fetchCardItems)
     yield takeLatest ('EDIT_CARD', editCard)
-    yield takeLatest ('EDIT_CARD_ID', editCardId)
+    yield takeLatest ('GET_CARD_ID', getCardId)
     yield takeLatest ('DELETE_CARD', deleteCard)
 }
 
-function* editCardId(action) {
+function* getCardId(action) {
     try {
-        console.log('inside of editCardId', action.payload.id)
+        console.log('inside of getCardId', action.payload.id)
         const response = yield axios.get(`/api/card/${action.payload.id}`);
         yield put ({ type: 'SET_CARD_ID', payload: response.data})
 
     } catch (error) {
-        console.log('Error in editCardId route', error)
+        console.log('Error in getCardId route', error)
     }
 
 }

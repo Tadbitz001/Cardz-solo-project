@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { HashRouter as Router, Route, Link, useHistory } from "react-router-dom";
+import { useState } from "react";
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -9,6 +10,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { TextField } from "@mui/material";
 
 
 function CardList () {
@@ -16,6 +18,8 @@ function CardList () {
     const card = useSelector((store) => store.cardReducer);
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const [clearSearch, setClearSearch] = useState('');
   
     useEffect(() => {
       dispatch({ type: 'FETCH_CARD'})
@@ -24,17 +28,56 @@ function CardList () {
     function handleClick (event, id) { //2️
         console.log('id', id)
         dispatch ({
-            type:'EDIT_CARD_ID', //3️
+            type:'GET_CARD_ID', //3️
             payload: id //3️
         })
 
         history.push('/indcarddetails')
     }
 
+
+    function searchCard (event) {
+        event.preventDefault();
+        dispatch ({
+            type: 'SEARCH_FOR_CARD',
+            payload: event.target.value
+        })
+        setClearSearch(event.target.value);
+    }
+
+    function clearScreen (event) {
+        event.preventDefault();
+        dispatch ({
+            type: 'FETCH_CARD',
+        })
+        setClearSearch('');
+    }
+
     return (
         <>
         <h2>This is your CARD LIST</h2>
-        
+            <Box display="flex" alignItems="center">
+                <TextField
+                    id="outlined-search"
+                    label="Search field"
+                    type="search"
+                    variant="outlined"
+                    size="medium"
+                    value={clearSearch}
+                    onChange={searchCard}
+                    style={{ marginRight: "16px" }}
+                />
+                <Button
+                    size="medium"
+                    variant="contained"
+                    color="primary"
+                    onClick={clearScreen}
+                    style={{ textTransform: "none" }}
+                >
+                    Clear Search
+                </Button>
+            </Box>
+
         <div style={{display: 'flex', flexWrap: 'wrap' }}>
           {card.map(item => (
 
