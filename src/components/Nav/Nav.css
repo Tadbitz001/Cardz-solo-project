@@ -71,19 +71,31 @@
 }
 
 .cardDetails {
+  position: relative;
   width: 350px;
   border: 1pt solid;
-  /* height: auto; */
+  min-height: 500px;
   margin: auto;
   display:flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
+/* .editButton {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+} */
+  
+/* .deleteButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+} */
 .profileContainer {
   position: relative;
-  width: 400px;
+  width: 350px;
   border: 1pt solid;
   /* height: auto; */
   background-color: rgb(201, 191, 168);
@@ -94,13 +106,4 @@
   align-items: center;
 }
 
-.cardDetailsBackBtn {
-  width: 350px;
-  /* border: 1pt solid; */
-  /* height: auto; */
-  margin: auto;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+

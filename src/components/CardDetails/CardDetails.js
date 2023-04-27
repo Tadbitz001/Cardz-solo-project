@@ -9,6 +9,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Box } from "@mui/material";
 
 
 function CardDetails () {
@@ -63,26 +64,33 @@ function CardDetails () {
     // {/* <p>{formattedDate}</p> */}
 
     return (
-        <>
+      <>
         <Card className="cardDetails">
+          <Box sx={{ position: "absolute", top: 10, right: 10 }}>
+            <Button
+              variant="text"
+              // style={{backgroundColor: '#D3D3D3'}}
+              onClick={goBack}
+            >
+              BACK
+            </Button>
+          </Box>
           <CardContent>
-            <Typography variant="h4" component="h2">
+            {/* <Typography variant="h4" component="h2">
               Card Details
-            </Typography>
-    
+            </Typography> */}
+
             {user.length > 0 && (
               <div>
-                <Typography variant="body1">
+                {/* <Typography variant="body1">
                   NAME: {user[0].contact_name}
+                </Typography> */}
+                <Typography variant="h4">{user[0].contact_business}</Typography>
+                <Typography variant="body1">
+                  Number: {user[0].contact_number}
                 </Typography>
                 <Typography variant="body1">
-                  BUSINESS: {user[0].contact_business}
-                </Typography>
-                <Typography variant="body1">
-                  NUMBER: {user[0].contact_number}
-                </Typography>
-                <Typography variant="body1">
-                  WEBSITE/EMAIL: {user[0].contact_url}
+                  Website/Email: {user[0].contact_url}
                 </Typography>
                 <Typography variant="body1">
                   Address: {user[0].contact_address}
@@ -90,7 +98,7 @@ function CardDetails () {
                 <Typography variant="body1">
                   City: {user[0].contact_city}
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" gutterBottom>
                   State: {user[0].contact_state}
                 </Typography>
                 <Typography variant="body1">
@@ -115,19 +123,22 @@ function CardDetails () {
                     </Button>
                   </div>
                 ) : (
+                    
                   <Button
+                    className="editButton"
                     variant="contained"
                     color="primary"
                     onClick={() => addInputField(user[0])}
+                    sx={{mt: 23}}
                   >
                     Edit
                   </Button>
-                  
                 )}
 
                 <Button
-                    style={{backgroundColor: '#ff0000'}}
-                    sx={{ marginLeft: 18 }}
+                  className="deleteButton"
+                  style={{ backgroundColor: "#ff0000" }}
+                  sx={{ marginLeft: 20, mt:23 }}
                   variant="contained"
                   color="secondary"
                   onClick={deleteDispatch}
@@ -138,17 +149,8 @@ function CardDetails () {
             )}
           </CardContent>
         </Card>
-        <div className="cardDetailsBackBtn">
-                <Button
-                    variant="contained"
-                    style={{backgroundColor: '#D3D3D3'}}
-                    onClick={goBack}
-                  >
-                    BACK
-                </Button>
-        </div>
-        </>
-      );
+      </>
+    );
     };
     
     export default CardDetails;
