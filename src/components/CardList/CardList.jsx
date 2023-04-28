@@ -81,7 +81,7 @@ function CardList () {
         <div style={{display: 'flex', flexWrap: 'wrap' }}>
           {card.map(item => (
 
-              <Card className="card" sx={{ minWidth: 275,  '&:hover': {
+              <Card className="cardList" sx={{ minWidth: 275,  '&:hover': {
                 boxShadow: '0 0 5px 10px rgba(0,0,0,0.2)'} }} key={item.id}>
                   <CardContent>
 

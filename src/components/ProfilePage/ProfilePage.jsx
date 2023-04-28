@@ -5,8 +5,7 @@ function ProfilePage () {
 
     return (
         <div className="formContainer">
-        <h3>Profile Page</h3>
-        <h2>Please complete the profile page below.</h2>
+        <h2>Profile Page</h2>
         <ProfileForm/>
 
         </div>

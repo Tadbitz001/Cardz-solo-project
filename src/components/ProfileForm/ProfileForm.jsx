@@ -5,6 +5,9 @@ import Box from "@mui/system/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import { Card, CardContent } from "@mui/material";
+import {Grid} from "@mui/material"
+import Typography from '@mui/material/Typography';
 
 function ProfileForm () {
 
@@ -73,62 +76,82 @@ function ProfileForm () {
 
     return (
         <>
-      <Box
-        component="form"
-       sx={{
-         display: 'flex',
-         flexDirection: 'column',
-         alignItems: 'center',
-         gap: '10px'
-       }}
-        noValidate
-        autoComplete="off"
-        onSubmit={postItem}
-      >
-        <TextField
-          id="1"
-          label="First Name"
-          variant="filled"
-          value={newItem.first_name}
-          onChange={handleItem}
-        />
+        <div>
 
-        <TextField
-          id="2"
-          label="Last Name"
-          variant="filled"
-          value={newItem.last_name}
-          onChange={handleItem}
-        />
-        <TextField
-          id="3"
-          label="Email"
-          variant="filled"
-          value={newItem.user_email}
-          onChange={handleItem}
-        />
-        <TextField
-          id="4"
-          label="Phone Number"
-          variant="filled"
-          value={newItem.user_number}
-          onChange={handleItem}
-          InputProps={{
-            pattern: '[0-9]+',
-            inputProps: { maxLength: 10 },
-          }}
-          
-        />
+          <Card style={{ maxWidth: 450, margin: "0 auto", padding: "20px 5px" }}>
+            <CardContent>
+              <Typography sx={{ fontSize: 26 }} color="text.secondary" gutterBottom>
+                Please complete your profile below.
+              </Typography>
+              <form>
+                <Grid container spacing={1}>
 
-        <Button type="submit" variant="contained">
-          Submit
-        </Button>
-        <Button size="large" variant="outlined" onClick={handleBackClick}>
-          BACK
-        </Button>
+                  <Grid xs={12} sm={6} item>
+                    <TextField
+                      id="1"
+                      label="First Name"
+                      placeholder="Enter First Name"
+                      variant="outlined"
+                      value={newItem.first_name}
+                      onChange={handleItem}
+                      fullWidth required
+                    />
+                  </Grid>
+                  <Grid xs={12} sm={6} item>
+                    <TextField
+                      id="2"
+                      label="Last Name"
+                      placeholder="Enter Last Name"
+                      variant="outlined"
+                      value={newItem.last_name}
+                      onChange={handleItem}
+                      fullWidth required
+                    />
+                  </Grid>
+                  <Grid xs={12} item>
+                    <TextField
+                      id="3"
+                      label="Email"
+                      type="email"
+                      placeholder="Enter Email"
+                      variant="outlined"
+                      value={newItem.user_email}
+                      onChange={handleItem}
+                      fullWidth required
+                    />
+                  </Grid>
+                  <Grid xs={12} item>
+                    <TextField
+                      id="4"
+                      label="Phone"
+                      type="number"
+                      placeholder="Enter Phone Number"
+                      variant="outlined"
+                      value={newItem.user_number}
+                      onChange={handleItem}
+                      InputProps={{
+                        pattern: '[0-9]+',
+                        inputProps: { maxLength: 10 },
+                      }}
+                      fullWidth required
+                    />
+                  </Grid>
 
+                  <Grid xs={12} item>
+                    <Button size="large" type="submit" variant="contained">
+                      Submit
+                    </Button>
+                    <Button size="large" sx={{ marginLeft: 2 }} variant="outlined" onClick={handleBackClick}>
+                      BACK
+                    </Button>
+                  </Grid>
 
-      </Box>
+                </Grid>
+              </form>
+            </CardContent>
+          </Card>
+
+      </div>
         </>
 
     )
