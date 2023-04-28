@@ -50,14 +50,15 @@ function Nav() {
             {/* <Link className="navLink" to="/info">
               Info Page
             </Link> */}  
-
+            <Link className="navLink" to="/about"> 
+              About Me
+            </Link>
+            
             <LogOutButton className="navLink" />
           </>
         )}
 
-        {/* <Link className="navLink" to="/about"> //dont need this right now
-          About
-        </Link> */}
+
       </div>
     </div>
   );

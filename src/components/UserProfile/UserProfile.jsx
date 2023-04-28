@@ -44,7 +44,7 @@ function UserProfile () {
             </Box>
             <div className="profileImage">
             <img src="https://api-private.atlassian.com/users/d253c7c83fb81e3eb4743ca564e43275/avatar" />
-            <Typography sx={{ fontSize: 30}} align="center" color="text.secondary" gutterBottom>
+            <Typography sx={{ fontSize: 25}} align="center" color="text.secondary" gutterBottom>
             User Profile ID: {userProfile.user_id}
             </Typography>
             </div>

@@ -25,6 +25,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 router.get('/:id', rejectUnauthenticated, (req, res) => {
   // GET id_route code here
+  console.log('this is req.body.id', req.body.id)
   pool
   .query(`SELECT * FROM card_info WHERE card_info.id = $1`, [req.params.id])
   .then((result) => {

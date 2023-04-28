@@ -95,4 +95,13 @@
   align-items: center;
 }
 
-
+.aboutContainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1pt solid;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px ;
+}

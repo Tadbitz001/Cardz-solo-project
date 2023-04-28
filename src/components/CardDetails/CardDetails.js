@@ -11,6 +11,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/material";
 
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 function CardDetails () {
     const user = useSelector((store) => store.cardIdReducer);
@@ -20,6 +25,7 @@ function CardDetails () {
 
     const [idToEdit, setIdToEdit] = useState('')
     const [newNotes, setNewNotes] = useState('')//were using useState to store the values from the input fields aka the thing were editing
+    const [open, setOpen] = useState(false);
 
     function addInputField(user){
         console.log('inside addInputField', user.id)
@@ -39,12 +45,24 @@ function CardDetails () {
         })
         setIdToEdit('')
         setNewNotes('')
-        history.push('/')
+        // history.push('/')
         //need to make saga for edit, need to make put request in saga, make server side put request
+        dispatch ({
+            type: 'GET_CARD_ID',
+            payload: user[0].id
+        })
     }
 
     function goBack () {
         history.push('/')
+    }
+
+    function handleClickOpen () {
+        setOpen(true);
+    }
+
+    function handleClose () {
+        setOpen(false);
     }
 
     function deleteDispatch () {
@@ -141,7 +159,7 @@ function CardDetails () {
                   sx={{ marginLeft: 20, mt:23 }}
                   variant="contained"
                   color="secondary"
-                  onClick={deleteDispatch}
+                  onClick={handleClickOpen}
                 >
                   DELETE
                 </Button>
@@ -149,6 +167,20 @@ function CardDetails () {
             )}
           </CardContent>
         </Card>
+        <Dialog
+            open={open}>
+            <DialogTitle>
+                Are you sure you want to Delete this?
+            </DialogTitle>
+            <DialogContent>
+                You will no longer be able to see this.
+            </DialogContent>
+            
+            <DialogActions>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button onClick={deleteDispatch}>Continue</Button>
+            </DialogActions>
+        </Dialog>
       </>
     );
     };

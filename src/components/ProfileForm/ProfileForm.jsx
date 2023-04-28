@@ -23,7 +23,7 @@ function ProfileForm () {
     const dispatch = useDispatch();
 
     const handleBackClick= () => {
-      history.push('/')
+      history.push('/displayprofile')
   }
 
 
@@ -47,6 +47,7 @@ function ProfileForm () {
     
         console.log('This is newItem', newItem);
 
+        
     }
 
     const postItem = () => {
@@ -60,7 +61,7 @@ function ProfileForm () {
                 user_number: ''
             })
             alert('Thank you for setting your profile!')
-            history.push('/')  //sends user back to main page when completed form.
+            history.push('/displayprofile')  //sends user back to main page when completed form.
         }
         else { 
             setNewItem({
@@ -83,7 +84,7 @@ function ProfileForm () {
               <Typography sx={{ fontSize: 26 }} color="text.secondary" gutterBottom>
                 Please complete your profile below.
               </Typography>
-              <form>
+              <form onSubmit={postItem}>
                 <Grid container spacing={1}>
 
                   <Grid xs={12} sm={6} item>

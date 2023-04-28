@@ -31,10 +31,8 @@ function CardList () {
             type:'GET_CARD_ID', //3️
             payload: id //3️
         })
-
         history.push('/indcarddetails')
     }
-
 
     function searchCard (event) {
         event.preventDefault();
@@ -102,11 +100,10 @@ function CardList () {
                       </Typography>
                   </CardContent>
                   <CardActions className="cardActions">
-                      <Button size="small" variant="outlined" onClick={(event)=> handleClick(event, item)}>Details</Button>
+                      <Button size="small" variant="outlined" onClick={(event)=> handleClick(event, item.id)}>Details</Button>
                   </CardActions>
               </Card>
             
-
             // <div className="cards" key={item.id}>
             //   <p>NAME:{item.contact_name}</p>
             //   <p>BUSINESS:{item.contact_business}</p>
@@ -114,7 +111,6 @@ function CardList () {
             //   <p>WEBSITE/EMAIL: {item.contact_url}</p> */}
             //   <p>NOTES: {item.contact_notes}</p>
             //   <button onClick={(event)=> handleClick(event, item)}>Details</button>
-
             // </div>
 
           ))}

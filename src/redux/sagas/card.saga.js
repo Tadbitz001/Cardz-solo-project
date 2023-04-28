@@ -10,8 +10,8 @@ function* cardSaga () {
 
 function* getCardId(action) {
     try {
-        console.log('inside of getCardId', action.payload.id)
-        const response = yield axios.get(`/api/card/${action.payload.id}`);
+        console.log('inside of getCardId', action.payload)
+        const response = yield axios.get(`/api/card/${action.payload}`);
         yield put ({ type: 'SET_CARD_ID', payload: response.data})
 
     } catch (error) {
