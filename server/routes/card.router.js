@@ -8,7 +8,7 @@ const {rejectUnauthenticated} = require('../modules/authentication-middleware')
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
-  const queryText = `SELECT * FROM card_info WHERE user_id =$1 ORDER BY contact_business ASC`;
+  const queryText = `SELECT * FROM card_info WHERE user_id =$1 ORDER BY contact_name ASC`;
   const queryValues = [req.user.id]
   pool
   .query(queryText, queryValues)
@@ -82,12 +82,11 @@ router.post('/', (req, res) => {
   console.log('This is req.body',req.body)
   console.log('This is user:', req.user)
 
-  const queryValues = [req.body.contact_name, req.body.contact_business,
-    req.body.contact_number, req.body.contact_address, req.body.contact_city, req.body.contact_state,
-    req.body.contact_url, req.body.contact_notes, req.body.contact_image, req.user.id];
+  const queryValues = [req.body.contact_name, req.body.contact_number, req.body.contact_address, req.body.contact_city, req.body.contact_state,
+    req.body.contact_zip_code, req.body.contact_url, req.body.contact_notes, req.body.contact_image, req.user.id];
   const queryText = `INSERT INTO "card_info"
-	("contact_name", "contact_business", "contact_number", "contact_address", "contact_city", 
-    "contact_state", "contact_url", "contact_notes", "contact_image", "user_id")
+	("contact_name", "contact_number", "contact_address", "contact_city", 
+    "contact_state", "contact_zip_code", "contact_url", "contact_notes", "contact_image", "user_id")
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`;
   
   pool

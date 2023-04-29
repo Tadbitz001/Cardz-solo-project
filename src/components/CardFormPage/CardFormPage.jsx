@@ -5,8 +5,7 @@ function CardFormPage () {
 
     return (
         <div className="formContainer">
-        <h3>CardForm Page</h3>
-        <h2>Please enter the following information below</h2>
+        {/* <h2 align="center">CardForm Page</h2> */}
         <CardForm/>
 
         </div>

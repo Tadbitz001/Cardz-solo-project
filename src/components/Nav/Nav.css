@@ -5,7 +5,7 @@
   align-items: center;
 
   margin: 0 0 30px;
-  background-color: #00acb0;
+  background-color: #2e30a6;
   overflow: hidden;
 }
 
@@ -24,7 +24,7 @@
 .navLink {
   display: inline-block;
   color: #f2f2f2;
-  background-color: #00acb0;
+  background-color: #2e30a6;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -38,12 +38,13 @@
 }
 
 .navLink:hover {
-  background-color: #008183;
+  background-color: rgb(150, 160, 221);
 }
 
 .cardList {
   position: relative;
-  width: 400px; 
+  background-color: gray;
+  width: 425px; 
   height: 200px; 
   margin: 10px;
 }
@@ -55,15 +56,7 @@
   margin: 10px;
 }
 
-/* .profileCard {
-  width: 600px;
-  height: 600px;
-  margin: 30px;
-  border: 1pt solid;
-} */
-
 .profileCard {
-
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -93,6 +86,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .aboutContainer {
@@ -101,7 +95,14 @@
   justify-content: center;
   align-items: center;
   border: 1pt solid;
+  border-radius: 10px;
   max-width: 500px;
   margin: auto;
   padding: 20px ;
+  background-color: white;
+  overflow: auto; /* Add a scrollbar to the container */
+}
+
+.table-responsive {
+  overflow-x: auto;
 }

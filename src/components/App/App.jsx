@@ -25,6 +25,7 @@ import CardDetails from '../CardDetails/CardDetails';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import CardFormPage from '../CardFormPage/CardFormPage';
 import UserProfile from '../UserProfile/UserProfile';
+import ListViewPage from '../ListViewPage/ListViewPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -80,6 +81,14 @@ function App() {
             <CardFormPage />
           </ProtectedRoute>
 
+          <ProtectedRoute 
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/listviewpage"
+          >
+            <ListViewPage />
+          </ProtectedRoute>
+          
           <ProtectedRoute 
             // logged in shows InfoPage else shows LoginPage
             exact

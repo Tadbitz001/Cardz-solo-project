@@ -24,7 +24,7 @@ function ProfileForm () {
 
     const handleBackClick= () => {
       history.push('/displayprofile')
-  }
+    }
 
 
     const handleItem = (event) => {
@@ -65,11 +65,14 @@ function ProfileForm () {
         }
         else { 
             setNewItem({
-                contact_name: '',
-                contact_business: '',
-                contact_number: '',
-                contact_address: ''
-  
+              first_name: '',
+              last_name: '',
+              user_email: '',
+              user_number: ''
+                // contact_name: '',
+                // contact_business: '',
+                // contact_number: '',
+                // contact_address: ''
             })
             alert('Please enter your information in all fields')
         }

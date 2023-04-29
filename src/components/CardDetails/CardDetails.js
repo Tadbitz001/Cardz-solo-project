@@ -103,7 +103,7 @@ function CardDetails () {
                 {/* <Typography variant="body1">
                   NAME: {user[0].contact_name}
                 </Typography> */}
-                <Typography variant="h5">{user[0].contact_business}</Typography>
+                <Typography variant="h5">{user[0].contact_name}</Typography>
                 <Typography variant="body1">
                   Number: {user[0].contact_number}
                 </Typography>
@@ -116,8 +116,11 @@ function CardDetails () {
                 <Typography variant="body1">
                   City: {user[0].contact_city}
                 </Typography>
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="body1" >
                   State: {user[0].contact_state}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                  Zip: {user[0].contact_zip_code}
                 </Typography>
                 <Typography variant="body1">
                   NOTES: {user[0].contact_notes}

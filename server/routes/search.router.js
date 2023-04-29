@@ -9,7 +9,7 @@ const {rejectUnauthenticated} = require('../modules/authentication-middleware')
  */
 router.get('/:cardsearch', rejectUnauthenticated, (req, res) => {
     // GET route code here
-    const queryText = `SELECT * FROM card_info WHERE user_id =$1 AND contact_business ILIKE $2`
+    const queryText = `SELECT * FROM card_info WHERE user_id =$1 AND contact_name ILIKE $2`
     const queryValues = [req.user.id, `%${req.params.cardsearch}%`]
     pool
     .query(queryText, queryValues)

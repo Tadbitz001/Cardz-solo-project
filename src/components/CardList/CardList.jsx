@@ -11,6 +11,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { TextField } from "@mui/material";
+import ListViewPage from "../ListView/ListView";
 
 
 function CardList () {
@@ -43,6 +44,10 @@ function CardList () {
         setClearSearch(event.target.value);
     }
 
+    function listViewPage () {
+        history.push('/listviewpage')
+    }
+
     function clearScreen (event) {
         event.preventDefault();
         dispatch ({
@@ -53,7 +58,7 @@ function CardList () {
 
     return (
         <>
-        <h2>This is your CARD LIST</h2>
+        {/* <h2>CARD LIST</h2> */}
             <Box display="flex" alignItems="center">
                 <TextField
                     id="outlined-search"
@@ -63,7 +68,7 @@ function CardList () {
                     size="medium"
                     value={clearSearch}
                     onChange={searchCard}
-                    style={{ marginRight: "16px" }}
+                    style={{ marginRight: "16px", backgroundColor: 'white' }}
                 />
                 <Button
                     size="medium"
@@ -73,6 +78,15 @@ function CardList () {
                     style={{ textTransform: "none" }}
                 >
                     Clear Search
+                </Button>
+                <Button
+                    size="medium"
+                    variant="contained"
+                    color="primary"
+                    onClick={listViewPage}
+                    style={{ textTransform: "none" }}
+                >
+                    List View
                 </Button>
             </Box>
 
@@ -85,19 +99,19 @@ function CardList () {
 
                       <Typography variant="h5" component="div">
                       </Typography>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                      CONTACT: {item.contact_business}
+                      <Typography sx={{ fontSize: 14 }} >
+                      CONTACT: {item.contact_name}
                       </Typography>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                      <Typography sx={{ fontSize: 14 }} >
                       NUMBER: {item.contact_number}
                       </Typography>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                      <Typography sx={{ fontSize: 14 }}  gutterBottom>
                       WEBSITE/EMAIL: {item.contact_url}
                       </Typography>
-                      <Typography variant="body2">
+                      <Typography variant="body2" color="text.secondary">
                       NOTES: {item.contact_notes}
-
                       </Typography>
+                      
                   </CardContent>
                   <CardActions className="cardActions">
                       <Button size="small" variant="outlined" onClick={(event)=> handleClick(event, item.id)}>Details</Button>
