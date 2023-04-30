@@ -128,15 +128,12 @@ function ProfileForm () {
                     <TextField
                       id="4"
                       label="Phone"
-                      type="number"
+                      // type="number"
                       placeholder="Enter Phone Number"
                       variant="outlined"
                       value={newItem.user_number}
                       onChange={handleItem}
-                      InputProps={{
-                        pattern: '[0-9]+',
-                        inputProps: { maxLength: 10 },
-                      }}
+                      inputProps={{ maxLength: 10 }}
                       fullWidth required
                     />
                   </Grid>

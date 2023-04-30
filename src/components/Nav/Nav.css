@@ -49,7 +49,7 @@
   position: relative;
   /* background-color: gray; */
   width: 450px; 
-  height: 225px; 
+  height: 220px; 
   margin: 10px;
   background-image: url(https://st2.depositphotos.com/4568293/12356/i/950/depositphotos_123563494-stock-photo-cream-marble-background-or-texture.jpg);
   background-size: cover;
@@ -108,6 +108,7 @@
   align-items: center;
   border: 1pt solid;
   border-radius: 10px;
+  line-height: 1.3;
   max-width: 500px;
   margin: auto;
   padding: 20px ;
@@ -119,5 +120,50 @@
   overflow-x: auto;
   margin: 20px;
   /* width: 350px; */
-  width: 800px
+  width: 1000px
 }
+
+/* .custom-table-container {
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 600px;
+} */
+
+.custom-table-container {
+  width: 100%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.custom-table-header {
+  
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.custom-table-header th {
+  padding: 15px;
+  text-align: left;
+}
+
+.custom-table-body td {
+  padding: 10px;
+}
+
+.custom-table-body tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.custom-table-body tr:hover {
+  background-color: #e6e6e6;
+}
+
+
+
+
+
+

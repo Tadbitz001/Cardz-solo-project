@@ -102,22 +102,22 @@ function CardList () {
 
                       <Typography variant="h5" component="div">
                       </Typography>
-                      <Typography sx={{ fontSize: 14 }} >
-                      CONTACT:   {item.contact_name}
+                      <Typography sx={{ fontSize: 15 }} >
+                      Contact:   {item.contact_name}
                       </Typography>
-                      <Typography sx={{ fontSize: 14, letterSpacing: '-0.5px' }} >
-                      NUMBER:   {item.contact_number && 
+                      <Typography sx={{ fontSize: 15, letterSpacing: '-0.5px' }} >
+                      Number:   {item.contact_number && 
                                     `${item.contact_number.slice(0, 3)}
                                     ${(item.contact_number.length >= 7 ? '-' : '')}
                                     ${item.contact_number.slice(3, 6)}
                                     ${(item.contact_number.length >= 7 ? '-' : '')}
                                     ${item.contact_number.slice(6)}`}
                       </Typography>
-                      <Typography sx={{ fontSize: 14 }}  gutterBottom>
-                      WEBSITE/EMAIL:  {item.contact_url}
+                      <Typography sx={{ fontSize: 15 }}  gutterBottom>
+                      Website/Email:  {item.contact_url}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                      NOTES: {item.contact_notes}
+                      <Typography sx={{ fontSize: 15 }} variant="body2" color="text.secondary">
+                      Notes: {item.contact_notes}
                       </Typography>
                       
                   </CardContent>

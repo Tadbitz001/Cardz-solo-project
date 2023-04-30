@@ -16,8 +16,6 @@ import { TextField } from "@mui/material";
 import Button from '@mui/material/Button';
 
 
-
-
 function ListView () {
 
     const card = useSelector((store) => store.cardReducer);
@@ -95,27 +93,27 @@ function ListView () {
             </Box>
 
             <div className="table-responsive">
-            <TableContainer component={Paper}  >
+            <TableContainer component={Paper} className="custom-table-container" >
                 <Table sx={{ minWidth: 300 }} aria-label="simple table">
                     <TableHead>
-                        <TableRow>
-                            <TableCell sx={{ width: '20%', fontSize: 20 }} >Name</TableCell>
-                            <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Number</TableCell>
-                            <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Email/Webpage</TableCell>
-                            <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Details</TableCell>
+                        <TableRow className="custom-table-header">
+                            <TableCell sx={{ width: '30%', fontSize: 20 }} >Name</TableCell>
+                            <TableCell sx={{ width: '30%', fontSize: 20  }} >Number</TableCell>
+                            <TableCell sx={{ width: '20%', fontSize: 20  }} >Email/Webpage</TableCell>
+                            <TableCell sx={{ width: '20%', fontSize: 20  }} >Details</TableCell>
 
                         </TableRow>
                     </TableHead>
-                    <TableBody>
+                    <TableBody className="custom-table-body">
                         {card.map((item) => (
                             <TableRow
                                 key={item.name}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell sx={{ width: '35' }} component="th" scope="row">
+                                <TableCell sx={{ width: '30' }} component="th" scope="row">
                                     {item.contact_name}
                                 </TableCell>
-                                <TableCell sx={{ width: '45%' }} align="right">
+                                <TableCell sx={{ width: '30%' }} >
                                     {item.contact_number && 
                                     `${item.contact_number.slice(0, 3)}
                                     ${(item.contact_number.length >= 7 ? '-' : '')}
@@ -124,8 +122,8 @@ function ListView () {
                                     ${item.contact_number.slice(6)}`}
                                     {/* {`${item.contact_number.slice(0, 3)}-${item.contact_number.slice(3, 6)}-${item.contact_number.slice(6)}`} */}
                                 </TableCell>                                
-                                <TableCell sx={{ width: '20%' }} align="right">{item.contact_url}</TableCell>
-                                <TableCell sx={{ width: '10%' }} align="right"><Button size="small" variant="outlined" onClick={(event) => handleClick(event, item.id)}>Details</Button></TableCell>
+                                <TableCell sx={{ width: '20%' }} >{item.contact_url}</TableCell>
+                                <TableCell sx={{ width: '20%' }} ><Button size="small" variant="outlined" onClick={(event) => handleClick(event, item.id)}>Details</Button></TableCell>
 
                             </TableRow>
                         ))}

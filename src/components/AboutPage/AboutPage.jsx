@@ -20,9 +20,11 @@ I'm thrilled to share this innovative solution with you, and I hope that it will
         <ul>
           <li> React</li>
           <li> Redux</li>
-          <li> Node</li>
+          <li> Node. js</li>
           <li> Express</li>
-          <li> Material UI</li>
+          <li> PostgreSQL</li>
+          <li> JavaScript</li>
+          <li> Material-UI</li>
         </ul>
         <h3>Reach me on LinkedIn</h3>
         <a href="https://www.linkedin.com/in/lee-xiong-069ab7154/" target="_blank">https://www.linkedin.com/in/lee-xiong-069ab7154/ </a>
