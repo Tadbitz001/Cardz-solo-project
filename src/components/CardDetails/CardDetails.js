@@ -104,8 +104,13 @@ function CardDetails () {
                   NAME: {user[0].contact_name}
                 </Typography> */}
                 <Typography variant="h5">{user[0].contact_name}</Typography>
-                <Typography variant="body1">
-                  Number: {user[0].contact_number}
+                <Typography variant="body1" >
+                  Number:   {user[0].contact_number && (
+                                    `${user[0].contact_number.slice(0, 3)}
+                                    ${(user[0].contact_number.length >= 7 ? '-' : '')}
+                                    ${user[0].contact_number.slice(3, 6)}
+                                    ${(user[0].contact_number.length >= 7 ? '-' : '')}
+                                    ${user[0].contact_number.slice(6)}`)}
                 </Typography>
                 <Typography variant="body1">
                   Website/Email: {user[0].contact_url}

@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { TextField } from "@mui/material";
 import ListViewPage from "../ListView/ListView";
+import cardListImage from "../Images/creamCardImage.jpeg"
 
 
 function CardList () {
@@ -59,10 +60,11 @@ function CardList () {
     return (
         <>
         {/* <h2>CARD LIST</h2> */}
-            <Box display="flex" alignItems="center">
+        {/* <img src={cardListImage}/> */}
+            <Box display="flex" alignItems="center" >
                 <TextField
                     id="outlined-search"
-                    label="Search field"
+                    label="Search Field"
                     type="search"
                     variant="outlined"
                     size="medium"
@@ -84,29 +86,35 @@ function CardList () {
                     variant="contained"
                     color="primary"
                     onClick={listViewPage}
-                    style={{ textTransform: "none" }}
+                    style={{ textTransform: "none", marginLeft: 15}}
                 >
                     List View
                 </Button>
+                
             </Box>
 
         <div style={{display: 'flex', flexWrap: 'wrap' }}>
           {card.map(item => (
 
-              <Card className="cardList" sx={{ minWidth: 275,  '&:hover': {
+              <Card className="cardList" sx={{ minWidth: 275, backgroundColor: {cardListImage}, '&:hover': {
                 boxShadow: '0 0 5px 10px rgba(0,0,0,0.2)'} }} key={item.id}>
                   <CardContent>
 
                       <Typography variant="h5" component="div">
                       </Typography>
                       <Typography sx={{ fontSize: 14 }} >
-                      CONTACT: {item.contact_name}
+                      CONTACT:   {item.contact_name}
                       </Typography>
-                      <Typography sx={{ fontSize: 14 }} >
-                      NUMBER: {item.contact_number}
+                      <Typography sx={{ fontSize: 14, letterSpacing: '-0.5px' }} >
+                      NUMBER:   {item.contact_number && 
+                                    `${item.contact_number.slice(0, 3)}
+                                    ${(item.contact_number.length >= 7 ? '-' : '')}
+                                    ${item.contact_number.slice(3, 6)}
+                                    ${(item.contact_number.length >= 7 ? '-' : '')}
+                                    ${item.contact_number.slice(6)}`}
                       </Typography>
                       <Typography sx={{ fontSize: 14 }}  gutterBottom>
-                      WEBSITE/EMAIL: {item.contact_url}
+                      WEBSITE/EMAIL:  {item.contact_url}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                       NOTES: {item.contact_notes}
@@ -117,15 +125,6 @@ function CardList () {
                       <Button size="small" variant="outlined" onClick={(event)=> handleClick(event, item.id)}>Details</Button>
                   </CardActions>
               </Card>
-            
-            // <div className="cards" key={item.id}>
-            //   <p>NAME:{item.contact_name}</p>
-            //   <p>BUSINESS:{item.contact_business}</p>
-            //   {/* <p>NUMBER: {item.contact_number}</p>
-            //   <p>WEBSITE/EMAIL: {item.contact_url}</p> */}
-            //   <p>NOTES: {item.contact_notes}</p>
-            //   <button onClick={(event)=> handleClick(event, item)}>Details</button>
-            // </div>
 
           ))}
         </div>

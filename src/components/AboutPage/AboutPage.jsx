@@ -9,8 +9,13 @@ function AboutPage() {
   return (
     <div className="aboutContainer">
       <div>
-        <h2>About Me</h2>
-        <p>Cardz was created by me to help manage those cards you aquire over time. It was intended to help people get rid of those big thick clunky wallets and messy purses by storing and managing contacts in a convient simple way.  </p>
+        <h2>About Cardz</h2>
+        <p>Greetings! I'm excited to introduce you to Cardz - a brainchild of mine aimed at helping people manage their growing collection of cards in a hassle-free manner. The idea behind Cardz was to simplify the lives of individuals by reducing the clutter in their wallets and purses, while also providing a convenient way to manage their contacts.
+
+With Cardz, you no longer have to deal with those big, thick, and clunky wallets that are difficult to manage. Instead, you can store and manage your cards with ease and simplicity. Whether it's business cards, personal cards, or loyalty cards, Cardz has got you covered.
+
+I'm thrilled to share this innovative solution with you, and I hope that it will make your life easier and more organized. Thank you for considering Cardz - your go-to card management tool!</p>
+        {/* <p>Cardz was created by me to help manage cards you aquire over time. It was intended to help people get rid of those big thick clunky wallets and messy purses by storing and managing contacts in a convient simple way.  </p> */}
         <h3>Technologies used in this app include..</h3>
         <ul>
           <li> React</li>
@@ -23,7 +28,6 @@ function AboutPage() {
         <a href="https://www.linkedin.com/in/lee-xiong-069ab7154/" target="_blank">https://www.linkedin.com/in/lee-xiong-069ab7154/ </a>
 
         <h3>Special thanks to Prime Digital Academy, the instructors, the aquamarine cohorts, and my supportive family!</h3>
-
 
       </div>
     </div>

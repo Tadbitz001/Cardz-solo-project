@@ -132,6 +132,8 @@ function CardForm () {
                       variant="outlined"
                       value={newItem.contact_number}
                       onChange={handleItem}
+                      inputProps={{ maxLength: 10 }}
+
                       fullWidth 
                     />
                   </Grid>
@@ -227,92 +229,6 @@ function CardForm () {
             </CardContent>
           </Card>
 
-
-        {/* <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-        onSubmit={postItem}
-      >
-        <TextField
-          id="1"
-          label="Name"
-          variant="filled"
-          value={newItem.contact_name}
-          onChange={handleItem}
-        />
-
-        <TextField
-          id="2"
-          label="Business"
-          variant="filled"
-          value={newItem.contact_business}
-          onChange={handleItem}
-        />
-        <TextField
-          id="3"
-          label="Number"
-          variant="filled"
-          value={newItem.contact_number}
-          onChange={handleItem}
-          type="text"
-          InputProps={{
-            pattern: '[0-9]+',
-            inputProps: { maxLength: 10 },
-          }}
-
-        />
-        <TextField
-          id="4"
-          label="Street Address"
-          variant="filled"
-          value={newItem.contact_address}
-          onChange={handleItem}
-        />
-        <TextField
-          id="5"
-          label="City"
-          variant="filled"
-          value={newItem.contact_city}
-          onChange={handleItem}
-        />
-        <TextField
-          id="6"
-          label="State"
-          variant="filled"
-          value={newItem.contact_state}
-          onChange={handleItem}
-        />
-        <TextField
-          id="7"
-          label="Email/Website"
-          variant="filled"
-          value={newItem.contact_url}
-          onChange={handleItem}
-        />
-        <TextField
-          id="8"
-          label="Notes"
-          variant="filled"
-          value={newItem.contact_notes}
-          onChange={handleItem}
-        />
-        <TextField
-          id="9"
-          label="Image URL"
-          variant="filled"
-          value={newItem.contact_image}
-          onChange={handleItem}
-        />
-
-        <Button type="submit" variant="contained">
-          Submit
-        </Button>
-
-      </Box> */}
         </>
     )
 

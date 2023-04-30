@@ -51,7 +51,7 @@ function Nav() {
               Info Page
             </Link> */}  
             <Link className="navLink" to="/about"> 
-              About Me
+              About
             </Link>
             
             <LogOutButton className="navLink" />

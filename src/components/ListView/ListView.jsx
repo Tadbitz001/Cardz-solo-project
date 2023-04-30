@@ -48,6 +48,10 @@ function ListView () {
         setClearSearch(event.target.value);
     }
 
+    function goBackBtn () {
+        history.push('/')
+    }
+
     function clearScreen (event) {
         event.preventDefault();
         dispatch ({
@@ -59,10 +63,10 @@ function ListView () {
     return (
         <>
 
-            <Box display="flex" alignItems="center">
+            <Box display="flex" alignItems="center" margin="20px">
                 <TextField
                     id="outlined-search"
-                    label="Search field"
+                    label="Search Field"
                     type="search"
                     variant="outlined"
                     size="medium"
@@ -79,17 +83,26 @@ function ListView () {
                 >
                     Clear Search
                 </Button>
+                <Button
+                    size="medium"
+                    variant="contained"
+                    color="primary"
+                    onClick={goBackBtn}
+                    style={{ textTransform: "none", marginLeft: 15}}
+                >
+                    Back
+                </Button>
             </Box>
 
             <div className="table-responsive">
-            <TableContainer component={Paper} style={{ width: '600px' }} >
+            <TableContainer component={Paper} style={{ width: '350px' }} >
                 <Table sx={{ minWidth: 300 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell sx={{ width: '20%' }} >NAME</TableCell>
-                            <TableCell sx={{ width: '20%' }} align="right">Number</TableCell>
-                            <TableCell sx={{ width: '20%' }} align="right">Email/Webpage</TableCell>
-                            <TableCell sx={{ width: '20%' }} align="right">Details</TableCell>
+                            <TableCell sx={{ width: '20%', fontSize: 20 }} >Name</TableCell>
+                            <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Number</TableCell>
+                            {/* <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Email/Webpage</TableCell> */}
+                            <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Details</TableCell>
 
                         </TableRow>
                     </TableHead>
@@ -99,12 +112,20 @@ function ListView () {
                                 key={item.name}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell sx={{ width: '20%' }} component="th" scope="row">
+                                <TableCell sx={{ width: '35' }} component="th" scope="row">
                                     {item.contact_name}
                                 </TableCell>
-                                <TableCell sx={{ width: '20%' }} align="right">{item.contact_number}</TableCell>
-                                <TableCell sx={{ width: '20%' }} align="right">{item.contact_url}</TableCell>
-                                <TableCell sx={{ width: '20%' }} align="right"><Button size="small" variant="outlined" onClick={(event) => handleClick(event, item.id)}>Details</Button></TableCell>
+                                <TableCell sx={{ width: '45%' }} align="right">
+                                    {item.contact_number && 
+                                    `${item.contact_number.slice(0, 3)}
+                                    ${(item.contact_number.length >= 7 ? '-' : '')}
+                                    ${item.contact_number.slice(3, 6)}
+                                    ${(item.contact_number.length >= 7 ? '-' : '')}
+                                    ${item.contact_number.slice(6)}`}
+                                    {/* {`${item.contact_number.slice(0, 3)}-${item.contact_number.slice(3, 6)}-${item.contact_number.slice(6)}`} */}
+                                </TableCell>                                
+                                {/* <TableCell sx={{ width: '20%' }} align="right">{item.contact_url}</TableCell> */}
+                                <TableCell sx={{ width: '10%' }} align="right"><Button size="small" variant="outlined" onClick={(event) => handleClick(event, item.id)}>Details</Button></TableCell>
 
                             </TableRow>
                         ))}

@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-// import LogOutButton from "../LogOutButton/LogOutButton";
-
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -43,7 +41,7 @@ function UserProfile () {
                 <Button variant="text" onClick={handleHomeClick}>Back</Button>
             </Box>
             <div className="profileImage">
-            <img src="https://api-private.atlassian.com/users/d253c7c83fb81e3eb4743ca564e43275/avatar" style={{ margin: '10px' }}/>
+            <img src="https://api-private.atlassian.com/users/d253c7c83fb81e3eb4743ca564e43275/avatar" style={{margin: 15}}/>
             <Typography sx={{ fontSize: 25}} align="center" color="text.secondary" gutterBottom>
             User Profile ID: {userProfile.user_id}
             </Typography>
@@ -51,17 +49,22 @@ function UserProfile () {
             <div className="profileText">
         <Card className="profileCard" sx={{ minWidth: 275 }}>
         <CardContent>
-            <Typography variant="h5" >
+            <Typography variant="h6" >
             First Name: {userProfile.first_name}
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography variant="h6" component="div">
             Last Name:  {userProfile.last_name}
             </Typography>
-            <Typography variant="h5" >
+            <Typography variant="h6" >
             User Email: {userProfile.user_email}
             </Typography>
-            <Typography variant="h5" gutterBottom>
-            Contact Number: {userProfile.user_number}
+            <Typography variant="h6" gutterBottom>
+            Contact Number: {userProfile.user_number && 
+                                    `${userProfile.user_number.slice(0, 3)}
+                                    ${(userProfile.user_number.length >= 7 ? '-' : '')}
+                                    ${userProfile.user_number.slice(3, 6)}
+                                    ${(userProfile.user_number.length >= 7 ? '-' : '')}
+                                    ${userProfile.user_number.slice(6)}`}
             </Typography>
             
         </CardContent>
