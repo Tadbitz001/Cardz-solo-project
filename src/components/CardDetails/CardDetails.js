@@ -130,8 +130,8 @@ function CardDetails () {
                 <Typography variant="body1">
                   NOTES: {user[0].contact_notes}
                 </Typography>
-                <Typography variant="body1">
-                  Created: {user[0].indttm}
+                <Typography variant="body1" color="primary">
+                  Created: {user[0].indttm.substring(0, 10)}
                 </Typography>
                 <br />
                 {idToEdit === user[0].id ? (

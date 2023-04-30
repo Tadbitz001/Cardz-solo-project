@@ -81,7 +81,7 @@ function ListView () {
                     onClick={clearScreen}
                     style={{ textTransform: "none" }}
                 >
-                    Clear Search
+                    Reset
                 </Button>
                 <Button
                     size="medium"
@@ -95,13 +95,13 @@ function ListView () {
             </Box>
 
             <div className="table-responsive">
-            <TableContainer component={Paper} style={{ width: '350px' }} >
+            <TableContainer component={Paper}  >
                 <Table sx={{ minWidth: 300 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             <TableCell sx={{ width: '20%', fontSize: 20 }} >Name</TableCell>
                             <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Number</TableCell>
-                            {/* <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Email/Webpage</TableCell> */}
+                            <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Email/Webpage</TableCell>
                             <TableCell sx={{ width: '20%', fontSize: 20  }} align="right">Details</TableCell>
 
                         </TableRow>
@@ -124,7 +124,7 @@ function ListView () {
                                     ${item.contact_number.slice(6)}`}
                                     {/* {`${item.contact_number.slice(0, 3)}-${item.contact_number.slice(3, 6)}-${item.contact_number.slice(6)}`} */}
                                 </TableCell>                                
-                                {/* <TableCell sx={{ width: '20%' }} align="right">{item.contact_url}</TableCell> */}
+                                <TableCell sx={{ width: '20%' }} align="right">{item.contact_url}</TableCell>
                                 <TableCell sx={{ width: '10%' }} align="right"><Button size="small" variant="outlined" onClick={(event) => handleClick(event, item.id)}>Details</Button></TableCell>
 
                             </TableRow>

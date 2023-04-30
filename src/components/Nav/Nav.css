@@ -47,13 +47,13 @@
 
 .cardList {
   position: relative;
-  background-color: gray;
-  width: 425px; 
-  height: 200px; 
+  /* background-color: gray; */
+  width: 450px; 
+  height: 225px; 
   margin: 10px;
-  /* background-image: url(${cardListImage}); */
-  /* background-size: cover; */
-
+  background-image: url(https://st2.depositphotos.com/4568293/12356/i/950/depositphotos_123563494-stock-photo-cream-marble-background-or-texture.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .cardActions {
@@ -68,7 +68,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
+  width: 375px;
   border: 1pt solid;
 }
 
@@ -82,11 +82,14 @@
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
+  background-image: url(https://st2.depositphotos.com/4568293/12356/i/950/depositphotos_123563494-stock-photo-cream-marble-background-or-texture.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .profileContainer {
   position: relative;
-  width: 350px;
+  width: 375px;
   border: 1pt solid;
   /* height: auto; */
   background-color: rgb(201, 191, 168);
@@ -115,4 +118,6 @@
 .table-responsive {
   overflow-x: auto;
   margin: 20px;
+  /* width: 350px; */
+  width: 800px
 }

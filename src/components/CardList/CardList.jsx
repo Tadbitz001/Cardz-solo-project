@@ -79,7 +79,7 @@ function CardList () {
                     onClick={clearScreen}
                     style={{ textTransform: "none" }}
                 >
-                    Clear Search
+                    Reset
                 </Button>
                 <Button
                     size="medium"
@@ -88,7 +88,7 @@ function CardList () {
                     onClick={listViewPage}
                     style={{ textTransform: "none", marginLeft: 15}}
                 >
-                    List View
+                    List
                 </Button>
                 
             </Box>
