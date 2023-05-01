@@ -55,11 +55,9 @@ function CardDetails () {
     }
 
    
-    
     function getImage () {
 
         setShowImage(true)
-
     }
 
     function goBack () {

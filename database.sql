@@ -22,6 +22,7 @@ CREATE TABLE "profile" (
 	"user_number" bigint,
 	"user_id" varchar(100) not null
 	);
+
 INSERT INTO "profile"
 	("first_name", "last_name", "user_email", "user_number", "user_id")
 VALUES
@@ -31,21 +32,23 @@ VALUES
 --create table card_info
 CREATE TABLE "card_info" (
 	"id" serial primary key,
-	"contact_name" varchar(50),
-	"contact_business" varchar(50),
-	"contact_number" bigint,
-	"contact_address" varchar(100),
-	"contact_city" varchar(100),
+	"contact_name" varchar(100),
+	"contact_number" varchar(20),
+	"contact_address" varchar(200),
+	"contact_city" varchar(200),
 	"contact_state" varchar(100),
+	"contact_zip_code" varchar(100),
 	"contact_url" varchar(1000),
-	"contact_notes" varchar(1000),
-	"contact_image" varchar(200)
+	"contact_notes" varchar(5000),
+	"contact_image" varchar(1000),
+	"indttm" TIMESTAMP default NOW() NOT NULL,
+	"user_id" varchar(100) not null
 	);
 	
 INSERT INTO "card_info"
-	("contact_name", "contact_business", "contact_number", "contact_address", "contact_city", "contact_state", "contact_url", "contact_notes", "contact_image")
+	("contact_name", "contact_number", "contact_address", "contact_city", "contact_state", 	"contact_zip_code" ,"contact_url", "contact_notes", "contact_image", "indttm", "user_id")
 VALUES
-	('Jimmy Johnson', '', 6120000000, '301 South 4th ave.', 'Minneapolis', 'MN', '', 'Really tall guy with beard', ''),
-	('', 'Geico', 6124444444, '', '', '', 'http://geico.com', 'act: 212345677 Due: Dec 29 2023', ''),
-	('Tim Tebow', '', 6510000000, '', '', '', '', 'Need to get some advice from him ASAP', ''),
-	('', 'CubFoods', 61211111111, '', '', '', '', 'Dont forget clearance items at end of year!', '');
+	('Jimmy Johnson', '6120000000', '301 South 4th ave.', 'Minneapolis', 'MN', '55455', '', 'Really tall guy with beard', '', '2023-04-27T23:42:12.393Z', 1),
+	('Geico', '6124444444', '', '', '', '', 'http://geico.com', 'act: 212345677 Due: Dec 29 2023', '', '2023-04-27T23:42:12.393Z', 1),
+	('Tim Tebow', '6510000000', '', '', '', '', '', 'Need to get some advice from him ASAP', '', '2023-04-27T23:42:12.393Z', 1),
+	('CubFoods', '61211111111', '', '', '', '', '', 'Dont forget clearance items at end of year!', '', '2023-04-27T23:42:12.393Z',  1);
