@@ -1,4 +1,4 @@
-Cardz is a comprehensive full-stack application designed to enable users to efficiently input, store, retrieve, and manage contact information with the added flexibility of editing and deleting data as required. 
+<!-- Cardz is a comprehensive full-stack application designed to enable users to efficiently input, store, retrieve, and manage contact information with the added flexibility of editing and deleting data as needed. 
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ On your VS Code terminal you will need at least two terminal windows and you wil
 - A new window browser should open or you can navigate to `localhost:3000`
 
 Once the login screen appears, you will need to register and provide a password, then you will need to login in order to access the app.
-
+ -->
 
 
 
@@ -101,7 +101,9 @@ Cardz is a web-based application that allows users to conveniently store persona
 
 ## Screenshots
 
-<img src="<img src="https://i.postimg.cc/4NFw7d4P/Screenshot-2023-05-05-at-1-31-41-PM.png" />" />## Built With
+<img src="<img src="https://i.postimg.cc/4NFw7d4P/Screenshot-2023-05-05-at-1-31-41-PM.png" /> 
+
+## Built With
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://material-ui.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://redux.js.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" height="40px" width="40px" /></a>
 
@@ -153,11 +155,12 @@ CREATE TABLE "card_info" (
 	"user_id" varchar(100) not null
 	);
 
+```
 
 ### Installation
 
 - In VS Code terminal, type `npm install`
-- Create a `.env` file at the root of the project and paste this line into the file:
+- Create a `.env` file at the root of the project and paste this line into the file
   ```
   SERVER_SESSION_SECRET=superDuperSecret
   ```
