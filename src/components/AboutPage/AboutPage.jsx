@@ -20,8 +20,8 @@ I'm thrilled to share this innovative solution with you, and I hope that it will
         <ul>
           <li> React</li>
           <li> Redux</li>
-          <li> Node. js</li>
-          <li> Express</li>
+          <li> Node.js</li>
+          <li> Express.js</li>
           <li> PostgreSQL</li>
           <li> JavaScript</li>
           <li> Material-UI</li>

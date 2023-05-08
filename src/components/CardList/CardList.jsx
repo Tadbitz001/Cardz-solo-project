@@ -11,7 +11,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { TextField } from "@mui/material";
-import ListViewPage from "../ListView/ListView";
 import cardListImage from "../Images/creamCardImage.jpeg"
 
 
@@ -27,11 +26,11 @@ function CardList () {
       dispatch({ type: 'FETCH_CARD'})
     }, [])
 
-    function handleClick (event, id) { //2️
+    function handleClick (event, id) { 
         console.log('id', id)
         dispatch ({
-            type:'GET_CARD_ID', //3️
-            payload: id //3️
+            type:'GET_CARD_ID', 
+            payload: id 
         })
         history.push('/indcarddetails')
     }

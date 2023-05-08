@@ -133,7 +133,6 @@ function CardForm () {
                       value={newItem.contact_number}
                       onChange={handleItem}
                       inputProps={{ maxLength: 10 }}
-
                       fullWidth 
                     />
                   </Grid>
@@ -179,6 +178,7 @@ function CardForm () {
                       variant="outlined"
                       value={newItem.contact_zip_code}
                       onChange={handleItem}
+                      inputProps={{ maxLength: 5 }}
                       fullWidth 
                     />
                   </Grid>

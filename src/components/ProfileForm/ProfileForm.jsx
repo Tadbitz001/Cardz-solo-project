@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom";
-import Box from "@mui/system/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
@@ -69,10 +68,7 @@ function ProfileForm () {
               last_name: '',
               user_email: '',
               user_number: ''
-                // contact_name: '',
-                // contact_business: '',
-                // contact_number: '',
-                // contact_address: ''
+
             })
             alert('Please enter your information in all fields')
         }

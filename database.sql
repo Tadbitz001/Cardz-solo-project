@@ -23,11 +23,12 @@ CREATE TABLE "profile" (
 	"user_id" varchar(100) not null
 	);
 
+--optional harcoded profile 
 INSERT INTO "profile"
 	("first_name", "last_name", "user_email", "user_number", "user_id")
 VALUES
 	('John', 'Smith', 'jsmith@yahoo.com', 6122222222, 1),
-	('Aqua', 'Marine', 'aquamarine@yahoo.com', 6123333333, 1);
+	('Aqua', 'Marine', 'aquamarine@yahoo.com', 6123333333, 2);
 
 --create table card_info
 CREATE TABLE "card_info" (
@@ -45,6 +46,7 @@ CREATE TABLE "card_info" (
 	"user_id" varchar(100) not null
 	);
 	
+--optional hard-coded card_info contacts
 INSERT INTO "card_info"
 	("contact_name", "contact_number", "contact_address", "contact_city", "contact_state", 	"contact_zip_code" ,"contact_url", "contact_notes", "contact_image", "indttm", "user_id")
 VALUES
